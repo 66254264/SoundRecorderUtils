@@ -38,5 +38,12 @@
             android:text="阅读"/>
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/tv_font"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="测试一下这个字体呢有什么不一样吗？"
+        android:textSize="30sp"
+        android:minLines="5"/>
 
 </LinearLayout>

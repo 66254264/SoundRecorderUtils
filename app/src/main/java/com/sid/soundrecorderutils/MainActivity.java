@@ -2,6 +2,8 @@ package com.sid.soundrecorderutils;
 
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -31,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*//根据路径得到Typeface
+        Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/SourceHanSans-Regular.otf");
+        TextView textView = (TextView) findViewById(R.id.tv_font);
+        textView.setTypeface(tf);*/
+
         initView();
         //初始化TTS
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
@@ -101,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
             String[] perms = {"android.permission.RECORD_AUDIO"};
             ActivityCompat.requestPermissions(MainActivity.this,perms, RESULT_CODE_STARTAUDIO);
         }
-
 
     }
 
